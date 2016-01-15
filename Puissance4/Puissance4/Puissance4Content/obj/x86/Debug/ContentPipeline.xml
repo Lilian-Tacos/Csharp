@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>objets\cadre.png</Source>
+      <Name>objets\cadre</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\cadre.xnb</Output>
+      <Time>2015-12-16T09:31:56.40625+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objets\pionjaune.png</Source>
+      <Name>objets\pionjaune</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\pionjaune.xnb</Output>
+      <Time>2015-12-16T09:32:32.828125+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objets\pionrouge.png</Source>
+      <Name>objets\pionrouge</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\pionrouge.xnb</Output>
+      <Time>2015-12-16T09:32:48.703125+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objets\jetonjaune.png</Source>
+      <Name>objets\jetonjaune</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\jetonjaune.xnb</Output>
+      <Time>2015-12-16T10:40:39.34375+01:00</Time>
+    </Item>
+    <Item>
+      <Source>objets\jetonrouge.png</Source>
+      <Name>objets\jetonrouge</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\jetonrouge.xnb</Output>
+      <Time>2015-12-16T10:40:39.34375+01:00</Time>
+    </Item>
+    <Item>
+      <Source>AfficherText.spritefont</Source>
+      <Name>AfficherText</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\AfficherText.xnb</Output>
+      <Time>2016-01-15T16:49:47.046875+01:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Puissance4\Puissance4\Puissance4Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Puissance4\Puissance4\Puissance4\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Puissance4\Puissance4\Puissance4Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2015-12-06T15:42:18.609375+01:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
