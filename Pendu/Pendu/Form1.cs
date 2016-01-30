@@ -51,7 +51,7 @@ namespace Pendu
         {
             fin.Text = "";
             motaff.Text = m.getmotflou();
-            fautes.Text = "Erreurs : " + m.getfautes();
+            fautes.Text = "Vies restantes : " +(10 - m.getfautes());
 
             if (!m.getetat())
             {
