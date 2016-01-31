@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Plateau.cs" />
     <Compile Include="IA.cs" />
     <Compile Include="ObjetPuissance4.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -24,10 +24,7 @@ namespace Puissance4
         ObjetPuissance4 pionrouge;
         ObjetPuissance4 jetonjaune;
 
-        int[,] damier;
-        const int VX = 6;
-        const int VY = 7;
-        bool joueur;
+        Plateau damier;
         int positionjaune;
         bool touche_up;
         int etat;
@@ -38,19 +35,13 @@ namespace Puissance4
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            damier = new int[VX, VY]{
-                {0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0}
-            };
-            joueur = true;
+
+            damier = new Plateau();
             positionjaune = 3;
             touche_up = true;
             etat = 0;
-            ordi = new IA();
+
+            ordi = new IA(damier);
         }
 
         /// <summary>
@@ -110,15 +101,7 @@ namespace Puissance4
             {
                 if (keyboard.IsKeyDown(Keys.Enter))
                 {
-                    damier = new int[VX, VY]{
-                        {0, 0, 0, 0, 0, 0, 0},
-                        {0, 0, 0, 0, 0, 0, 0},
-                        {0, 0, 0, 0, 0, 0, 0},
-                        {0, 0, 0, 0, 0, 0, 0},
-                        {0, 0, 0, 0, 0, 0, 0},
-                        {0, 0, 0, 0, 0, 0, 0}
-                    };
-                    joueur = true;
+                    damier.nouvellePartie();
                     positionjaune = 3;
                     touche_up = true;
                     etat = 0;
@@ -126,9 +109,9 @@ namespace Puissance4
                 }
             }
 
-            else if (joueur)
+            else if (damier.Joueur)
             {
-                if (keyboard.IsKeyDown(Keys.Right) && positionjaune < VX && touche_up)
+                if (keyboard.IsKeyDown(Keys.Right) && positionjaune < damier.getVX() && touche_up)
                 {
                     positionjaune++;
                     touche_up = false;
@@ -143,13 +126,13 @@ namespace Puissance4
 
                 else if (keyboard.IsKeyDown(Keys.Down) && touche_up)
                 {
-                    etat = jouer(positionjaune);
+                    etat = damier.jouer(positionjaune);
                     touche_up = false;
                 }
             }
             else
             {
-                etat =jouer(ordi.faireChoix(damier));
+                etat = damier.jouer(ordi.faireChoix());
             }
 
             base.Update(gameTime);
@@ -172,30 +155,30 @@ namespace Puissance4
             _font = Content.Load<SpriteFont>("AfficherText");
             Vector2 text =new Vector2(160, 0);
 
-            for (int x = 0; x < VX; x++)
+            for (int x = 0; x < damier.getVX(); x++)
             {
-                for (int y = 0; y < VY; y++)
+                for (int y = 0; y < damier.getVY(); y++)
                 {
                     int xpos, ypos;
                     xpos = offsetX + x * 57;
                     ypos = offsetY + y * 57;
                     Vector2 pos = new Vector2(ypos, xpos);
-                    if (damier[x, y] == 0)
+                    if (damier.getCase(x, y) == 0)
                         spriteBatch.Draw(cadre.Texture, pos, Color.White);
-                    else if (damier[x, y] == 2)
+                    else if (damier.getCase(x, y) == 2)
                         spriteBatch.Draw(pionrouge.Texture, pos, Color.White);
-                    else if (damier[x, y] == 1)
+                    else if (damier.getCase(x, y) == 1)
                         spriteBatch.Draw(pionjaune.Texture, pos, Color.White);
                 }
             }
-            if (joueur)
+            if (damier.Joueur)
             {
                 Vector2 pos = new Vector2(offsetY + positionjaune * 57, 20);
                 spriteBatch.Draw(jetonjaune.Texture, pos, Color.White);
             }
             if (etat == 2)
             {
-                if (joueur)
+                if (damier.Joueur)
                 {
                     spriteBatch.DrawString(_font, "Vous avez gagner.", text, Color.White);
                    // spriteBatch.DrawString(_font, "Appuyer sur entré pour continuer.", text, Color.White);
@@ -212,136 +195,7 @@ namespace Puissance4
             spriteBatch.End();
 
             base.Draw(gameTime);
-        }
+        }      
         
-        // 0 = pion non jouer, 1 = jouer, 2 = gagné, 3 = plein
-        public int jouer(int colonne)
-        {
-            if (colonne >= VY || colonne < 0)
-                return 0;
-            else if (damier[0, colonne] != 0)
-                return 0;
-            else
-            {
-                int i = VX -1;
-                while (damier[i, colonne] != 0)
-                    i--;
-                if (joueur)
-                    damier[i, colonne] = 1;
-                else
-                    damier[i, colonne] = 2;
-
-                if (testvictoire(i, colonne))
-                    return 2;
-                if (testfin())
-                    return 3;
-
-                joueur = !joueur;
-                return 1;
-            }
-        }
-
-        public bool testvictoire(int ligne, int colonne)
-        {
-            return testligne(ligne, colonne) || testcolonne(ligne, colonne) || testdiag(ligne, colonne);
-        }
-
-        public bool testligne(int ligne, int colonne)
-        {
-            int couleur = damier[ligne, colonne];
-            int cpt = 0;
-            colonne = 0;
-            while (cpt < 4 && colonne < VY)
-            {
-                if (damier[ligne, colonne] == couleur)
-                    cpt++;
-                else
-                    cpt = 0;
-                colonne++;
-            }
-
-            if (cpt == 4)
-                return true;
-            else
-                return false;
-        }
-
-        public bool testcolonne(int ligne, int colonne)
-        {
-            int couleur = damier[ligne, colonne];
-            int cpt = 0;
-            ligne = 0;
-            while (cpt < 4 && ligne < VX)
-            {
-                if (damier[ligne, colonne] == couleur)
-                    cpt++;
-                else
-                    cpt = 0;
-                ligne++;
-            }
-            if (cpt == 4)
-                return true;
-            else
-                return false;
-        }
-
-        public bool testdiag(int ligne, int colonne)
-        {
-            int couleur = damier[ligne, colonne];
-            int cpt = 0;
-            int x = ligne;
-            int y = colonne;
-            while (x < VX - 1 && y > 0)
-            {
-                x++;
-                y--;
-            }
-
-            while (x >= 0 && y < VY && cpt < 4)
-            {
-                if (damier[x, y] == couleur)
-                    cpt++;
-                else
-                    cpt = 0;
-                x--;
-                y++;
-            }
-            if (cpt == 4)
-                return true;
-
-            cpt = 0;
-            x = ligne;
-            y = colonne;
-            while (x < VX - 1 && y < VY - 1)
-            {
-                x++;
-                y++;
-            }
-
-            while (x >= 0 && y >= 0 && cpt < 4)
-            {
-                if (damier[x, y] == couleur)
-                    cpt++;
-                else
-                    cpt = 0;
-                x--;
-                y--;
-            }
-            if (cpt == 4)
-                return true;
-
-            return false;
-
-        }
-
-        public bool testfin()
-        {
-            bool plein = true;
-            for(int i=0;i<VY;i++)
-                if (damier[0,i] ==0)
-                    plein = false;
-
-            return plein;
-        }
     }
 }
