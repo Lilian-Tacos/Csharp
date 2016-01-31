@@ -180,7 +180,7 @@ namespace Puissance4
             {
                 if (damier.Joueur)
                 {
-                    spriteBatch.DrawString(_font, "Vous avez gagner.", text, Color.White);
+                    spriteBatch.DrawString(_font, "Vous avez gagné.", text, Color.White);
                    // spriteBatch.DrawString(_font, "Appuyer sur entré pour continuer.", text, Color.White);
                 }
                 else

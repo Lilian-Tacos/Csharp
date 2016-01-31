@@ -22,3 +22,15 @@ D:\04 - Documents\01 - Polytech\Semestre_05\ISI1\00 - GitHub\Csharp\Puissance4\P
 D:\04 - Documents\01 - Polytech\Semestre_05\ISI1\00 - GitHub\Csharp\Puissance4\Puissance4\Puissance4\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\04 - Documents\01 - Polytech\Semestre_05\ISI1\00 - GitHub\Csharp\Puissance4\Puissance4\Puissance4\obj\x86\Debug\Puissance4.exe
 D:\04 - Documents\01 - Polytech\Semestre_05\ISI1\00 - GitHub\Csharp\Puissance4\Puissance4\Puissance4\obj\x86\Debug\Puissance4.pdb
+C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Csharp\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\cadre.xnb
+C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Csharp\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\pionjaune.xnb
+C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Csharp\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\pionrouge.xnb
+C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Csharp\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\jetonjaune.xnb
+C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Csharp\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\jetonrouge.xnb
+C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Csharp\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\AfficherText.xnb
+C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Csharp\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Puissance4.exe
+C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Csharp\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Puissance4.pdb
+C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Csharp\Puissance4\Puissance4\Puissance4\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Csharp\Puissance4\Puissance4\Puissance4\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Csharp\Puissance4\Puissance4\Puissance4\obj\x86\Debug\Puissance4.exe
+C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Csharp\Puissance4\Puissance4\Puissance4\obj\x86\Debug\Puissance4.pdb
