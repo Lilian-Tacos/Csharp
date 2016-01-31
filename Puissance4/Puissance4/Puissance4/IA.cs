@@ -67,7 +67,7 @@ namespace Puissance4
             Plateau damierTest = new Plateau();
             damier.faireCopie(damierTest); // copie damier dans damierTest
 
-            for (int colonne = 0; colonne < damierTest.getVX(); colonne++)
+            for (int colonne = 0; colonne < damierTest.getVY(); colonne++)
             {
                 if(damierTest.jouer(colonne, joueur) == 2){
                     return colonne;
