@@ -105,7 +105,7 @@ namespace Puissance4
                     positionjaune = 3;
                     touche_up = true;
                     etat = 0;
-                    ordi.Niveau++;
+                    if (damier.Joueur) { ordi.Niveau++; }
                 }
             }
 
@@ -153,7 +153,7 @@ namespace Puissance4
             int offsetY = 0;
             SpriteFont _font;
             _font = Content.Load<SpriteFont>("AfficherText");
-            Vector2 text =new Vector2(30, 0);
+            Vector2 text =new Vector2(50, 0);
 
             for (int x = 0; x < damier.getVX(); x++)
             {
@@ -169,6 +169,8 @@ namespace Puissance4
                         spriteBatch.Draw(pionrouge.Texture, pos, Color.White);
                     else if (damier.getCase(x, y) == 1)
                         spriteBatch.Draw(pionjaune.Texture, pos, Color.White);
+
+                    spriteBatch.DrawString(_font, "lvl" + ordi.Niveau, new Vector2(0, 0), Color.White);
                 }
             }
             if (damier.Joueur)
