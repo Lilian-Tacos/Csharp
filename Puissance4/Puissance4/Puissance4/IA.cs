@@ -47,7 +47,7 @@ namespace Puissance4
 
         public int IA1()
         {           
-            return rnd.Next(3) + rnd.Next(4);
+            return rnd.Next(4) + rnd.Next(4);
         }
 
         public int IA2()
@@ -59,7 +59,7 @@ namespace Puissance4
             else if ((n = trouveColonne(true)) != -1) // cherche a defendre
                 return n;
             else
-                return rnd.Next(3) + rnd.Next(4); // sinon joue aléatoirement
+                return rnd.Next(4) + rnd.Next(4); // sinon joue aléatoirement
         }
 
         public int trouveColonne(bool joueur)

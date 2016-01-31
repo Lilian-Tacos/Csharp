@@ -153,7 +153,7 @@ namespace Puissance4
             int offsetY = 0;
             SpriteFont _font;
             _font = Content.Load<SpriteFont>("AfficherText");
-            Vector2 text =new Vector2(160, 0);
+            Vector2 text =new Vector2(30, 0);
 
             for (int x = 0; x < damier.getVX(); x++)
             {
@@ -180,17 +180,17 @@ namespace Puissance4
             {
                 if (damier.Joueur)
                 {
-                    spriteBatch.DrawString(_font, "Vous avez gagné.", text, Color.White);
+                    spriteBatch.DrawString(_font, "Vous avez gagne, faites entree", text, Color.White);
                    // spriteBatch.DrawString(_font, "Appuyer sur entré pour continuer.", text, Color.White);
                 }
                 else
                 {
-                    spriteBatch.DrawString(_font, "Vous avez perdu.", text, Color.White);
+                    spriteBatch.DrawString(_font, "Vous avez perdu, faites entree", text, Color.White);
                    // spriteBatch.DrawString(_font, "Appuyer sur entré pour recommencer.", text, Color.White);
                 }
             }
             else if (etat == 3)
-                spriteBatch.DrawString(_font, "Match nul", text, Color.White);
+                spriteBatch.DrawString(_font, "Match nul, faites entree", text, Color.White);
 
             spriteBatch.End();
 
