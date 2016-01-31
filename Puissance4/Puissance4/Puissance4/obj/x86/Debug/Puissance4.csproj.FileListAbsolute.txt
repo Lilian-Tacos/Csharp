@@ -10,3 +10,15 @@ C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Puissance4\Puissan
 C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\jetonjaune.xnb
 C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\jetonrouge.xnb
 C:\Documents and Settings\Lilian Varrel\Mes documents\projets\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\AfficherText.xnb
+D:\04 - Documents\01 - Polytech\Semestre_05\ISI1\00 - GitHub\Csharp\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\cadre.xnb
+D:\04 - Documents\01 - Polytech\Semestre_05\ISI1\00 - GitHub\Csharp\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\pionjaune.xnb
+D:\04 - Documents\01 - Polytech\Semestre_05\ISI1\00 - GitHub\Csharp\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\pionrouge.xnb
+D:\04 - Documents\01 - Polytech\Semestre_05\ISI1\00 - GitHub\Csharp\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\jetonjaune.xnb
+D:\04 - Documents\01 - Polytech\Semestre_05\ISI1\00 - GitHub\Csharp\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\objets\jetonrouge.xnb
+D:\04 - Documents\01 - Polytech\Semestre_05\ISI1\00 - GitHub\Csharp\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Content\AfficherText.xnb
+D:\04 - Documents\01 - Polytech\Semestre_05\ISI1\00 - GitHub\Csharp\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Puissance4.exe
+D:\04 - Documents\01 - Polytech\Semestre_05\ISI1\00 - GitHub\Csharp\Puissance4\Puissance4\Puissance4\bin\x86\Debug\Puissance4.pdb
+D:\04 - Documents\01 - Polytech\Semestre_05\ISI1\00 - GitHub\Csharp\Puissance4\Puissance4\Puissance4\obj\x86\Debug\Puissance4.csprojResolveAssemblyReference.cache
+D:\04 - Documents\01 - Polytech\Semestre_05\ISI1\00 - GitHub\Csharp\Puissance4\Puissance4\Puissance4\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\04 - Documents\01 - Polytech\Semestre_05\ISI1\00 - GitHub\Csharp\Puissance4\Puissance4\Puissance4\obj\x86\Debug\Puissance4.exe
+D:\04 - Documents\01 - Polytech\Semestre_05\ISI1\00 - GitHub\Csharp\Puissance4\Puissance4\Puissance4\obj\x86\Debug\Puissance4.pdb

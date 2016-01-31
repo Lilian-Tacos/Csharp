@@ -18,18 +18,20 @@ namespace Puissance4
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
         ObjetPuissance4 cadre;
         ObjetPuissance4 pionjaune;
         ObjetPuissance4 pionrouge;
+        ObjetPuissance4 jetonjaune;
+
         int[,] damier;
         const int VX = 6;
         const int VY = 7;
         bool joueur;
-        ObjetPuissance4 jetonjaune;
         int positionjaune;
         bool touche_up;
         int etat;
-        int niveau;
+        IA ordi;
 
 
         public Puissance4()
@@ -48,7 +50,7 @@ namespace Puissance4
             positionjaune = 3;
             touche_up = true;
             etat = 0;
-            niveau = 1;
+            ordi = new IA();
         }
 
         /// <summary>
@@ -70,15 +72,12 @@ namespace Puissance4
         /// </summary>
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
 
             graphics.PreferredBackBufferWidth = 7 * 57 - 1;
             graphics.PreferredBackBufferHeight = 6 * 57 - 1 + 80;
             graphics.ApplyChanges();
-            // on charge un objet mur 
+
             cadre = new ObjetPuissance4(Content.Load<Texture2D>("objets\\cadre"), new Vector2(0f, 0f), new Vector2(100f, 100f));
             pionjaune = new ObjetPuissance4(Content.Load<Texture2D>("objets\\pionjaune"), new Vector2(0f, 0f), new Vector2(100f, 100f));
             pionrouge = new ObjetPuissance4(Content.Load<Texture2D>("objets\\pionrouge"), new Vector2(0f, 0f), new Vector2(100f, 100f));
@@ -123,7 +122,7 @@ namespace Puissance4
                     positionjaune = 3;
                     touche_up = true;
                     etat = 0;
-                    niveau++;
+                    ordi.Niveau++;
                 }
             }
 
@@ -134,22 +133,23 @@ namespace Puissance4
                     positionjaune++;
                     touche_up = false;
                 }
-                if (keyboard.IsKeyDown(Keys.Left) && positionjaune >0 && touche_up)
+                else if (keyboard.IsKeyDown(Keys.Left) && positionjaune >0 && touche_up)
                 {
                     positionjaune--;
                     touche_up = false;
                 }
-                if (keyboard.IsKeyDown(Keys.Down) && touche_up)
+                else if (keyboard.IsKeyUp(Keys.Left) && keyboard.IsKeyUp(Keys.Right) && keyboard.IsKeyUp(Keys.Down) && !touche_up)
+                    touche_up = true;
+
+                else if (keyboard.IsKeyDown(Keys.Down) && touche_up)
                 {
-                    etat =jouer(positionjaune);
+                    etat = jouer(positionjaune);
                     touche_up = false;
                 }
-                if (keyboard.IsKeyUp(Keys.Left) && keyboard.IsKeyUp(Keys.Right) && keyboard.IsKeyUp(Keys.Down) && !touche_up)
-                    touche_up = true;
             }
             else
             {
-                etat =jouer(IA(niveau));
+                etat =jouer(ordi.faireChoix(damier));
             }
 
             base.Update(gameTime);
@@ -196,9 +196,15 @@ namespace Puissance4
             if (etat == 2)
             {
                 if (joueur)
-                    spriteBatch.DrawString(_font, "Gagne !!!", text, Color.White);
+                {
+                    spriteBatch.DrawString(_font, "Vous avez gagner.", text, Color.White);
+                   // spriteBatch.DrawString(_font, "Appuyer sur entré pour continuer.", text, Color.White);
+                }
                 else
-                    spriteBatch.DrawString(_font, "Perdu ...", text, Color.White);
+                {
+                    spriteBatch.DrawString(_font, "Vous avez perdu.", text, Color.White);
+                   // spriteBatch.DrawString(_font, "Appuyer sur entré pour recommencer.", text, Color.White);
+                }
             }
             else if (etat == 3)
                 spriteBatch.DrawString(_font, "Match nul", text, Color.White);
@@ -207,23 +213,7 @@ namespace Puissance4
 
             base.Draw(gameTime);
         }
-
-        public int IA(int niveau)
-        {
-            // Niveau max d'IA !!!
-            if (niveau > 2)
-                niveau = 2;
-
-            Random rnd = new Random();
-            if (niveau == 1)
-                return rnd.Next(7);
-            else if (niveau == 2)
-                return rnd.Next(3) + rnd.Next(4);
-            // Ajouter des vraies IA 
-            return -1;
-        }
-
-
+        
         // 0 = pion non jouer, 1 = jouer, 2 = gagné, 3 = plein
         public int jouer(int colonne)
         {
